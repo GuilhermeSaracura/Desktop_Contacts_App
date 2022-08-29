@@ -20,9 +20,11 @@
             <TextBox x:Name="PhoneTextBox"
                      Margin="0,0,0,5"/>
             <Button Content="Save"
+                    Style="{StaticResource ButtonUpdateSaveContactStyle}"
                     Margin="0,5,0,5"
                     Click="SaveButton_Click"/>
             <Button Content="Cancel"
+                    Style="{StaticResource CancelButtonCancelStyle}"
                     Margin="0,5,0,5"
                     Click="CancelButton_Click"/>
 
