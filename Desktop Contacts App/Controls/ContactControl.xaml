@@ -4,19 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Desktop_Contacts_App.Controls"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
+             Style="{StaticResource ContactItem}"
              d:DesignHeight="90" d:DesignWidth="450">
-    <Grid Background="LightGray">
+    <Grid>
         <StackPanel Margin="30,10,10,10">
-            <TextBlock x:Name="NameTextBlock"  Text="Name Lastname"
-                                   FontSize="20"
-                                   FontWeight="Bold"/>
-            <TextBlock x:Name="EmailTextBlock" Text="email@email.com"
-                                   FontSize="15"
-                                   Foreground="DodgerBlue"/>
-            <TextBlock x:Name="PhoneTextBlock" Text="(123) 456 7890"
-                                   FontSize="15"
-                                   FontStyle="Italic"/>
+            <TextBlock x:Name="NameTextBlock"
+                       Style="{StaticResource ContactName}"
+                       Text="Name Lastname"/>
+            <TextBlock x:Name="EmailTextBlock"
+                       Text="email@email.com"
+                       Style="{StaticResource ContactDataEmail}"/>
+            <TextBlock x:Name="PhoneTextBlock"
+                       Text="(123) 456 7890"
+                       Style="{StaticResource ContactDataPhone}"/>
         </StackPanel>
     </Grid>
 </UserControl>

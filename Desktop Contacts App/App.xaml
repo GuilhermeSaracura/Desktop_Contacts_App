@@ -5,8 +5,10 @@
              xmlns:uc="clr-namespace:Desktop_Contacts_App.Controls"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="BackGroundWindowColor" Color="LightSteelBlue"/>
-        <SolidColorBrush x:Key="NewContactButtonColor" Color="Orange"/>
+        <SolidColorBrush x:Key="BackGroundWindowColor" Color="#1C023D"/>
+        <SolidColorBrush x:Key="ItemContactBackgroundColor" Color="#2C6899"/>
+        <SolidColorBrush x:Key="NewContactButtonColor" Color="#09B053"/>
+        <SolidColorBrush x:Key="ContactNameColor" Color="#39EDE7"/>
         <SolidColorBrush x:Key="SaveUpdateButtonColor" Color="DarkGreen"/>
         <SolidColorBrush x:Key="DeleteButtonColor" Color="DarkRed"/>
         <SolidColorBrush x:Key="CancelButtonColor" Color="DarkSlateGray"/>
@@ -47,6 +49,27 @@
         <Style TargetType="ListView" x:Key="ListContactsStyle">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+
+        <Style TargetType="UserControl" x:Key="ContactItem">
+            <Setter Property="Background" Value="{StaticResource ItemContactBackgroundColor}"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="ContactName">
+            <Setter Property="Foreground" Value="{StaticResource ContactNameColor}"/>
+            <Setter Property="FontSize" Value="20px"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="ContactDataEmail">
+            <Setter Property="Foreground" Value="{StaticResource ForegroundWhite}"/>
+            <Setter Property="FontSize" Value="15px"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="ContactDataPhone">
+            <Setter Property="Foreground" Value="{StaticResource ForegroundWhite}"/>
+            <Setter Property="FontSize" Value="15px"/>
+            <Setter Property="FontStyle" Value="Italic"/>
         </Style>
     </Application.Resources>
 </Application>
