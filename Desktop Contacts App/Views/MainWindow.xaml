@@ -7,6 +7,7 @@
         xmlns:uc="clr-namespace:Desktop_Contacts_App.Controls"
         mc:Ignorable="d"
         Style="{StaticResource WindowStyle}"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="450" Width="525">
     <StackPanel Margin="10">
         <Border
@@ -16,30 +17,49 @@
             <Border.Clip>
                 <RectangleGeometry RadiusX="5" RadiusY="5" Rect="0,0,150,20"/>
             </Border.Clip>
-        <Button Content="New Contact"
-                BorderThickness="0"
+            <Button Content="New Contact"
                 Style="{StaticResource ButtonNewContactStyle}"
                 Click="Button_Click"/>
-        </Border>
-        <TextBox Margin="0,5,0,5"
-                 Height="20"
-                 TextChanged="TextBox_TextChanged"/>
+            </Border>
+        <Grid Margin="0,5,0,5" Width="300" Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Search contact:"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontWeight="SemiBold"
+                       Grid.Column="0"/>
+            <Border
+            Height="20"
+            Grid.Column="1"
+            Background="Transparent">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,200,20"/>
+                </Border.Clip>
+                <TextBox x:Name="SearchTextBox"
+                         Style="{StaticResource SearchTextBlockStyle}"
+                     TextChanged="TextBox_TextChanged"/>
+            </Border>
+        </Grid>
         <ListView x:Name="ContactsViewList"
                   Style="{StaticResource ListContactsStyle}"
                   SelectionChanged="ContactsViewList_SelectionChanged"
-                  Height="360"
+                  Height="345"
                   Margin="5,0,5,0">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalAlignment" Value="Center"/>
-                    <Setter Property="Width" Value="460"/>
+                    <Setter Property="Width" Value="450"/>
                     <Setter Property="Cursor" Value="Hand"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type ListViewItem}">
                                 <Border x:Name="border">
                                     <Border.Clip>
-                                        <RectangleGeometry RadiusX="20" RadiusY="20" Rect="0,0,450,90"/>
+                                        <RectangleGeometry RadiusX="20" RadiusY="20" Rect="0,0,440,90"/>
                                     </Border.Clip>
                                     <ContentPresenter x:Name="ContentPresenter" Margin="0,2,0,2"/>
                                 </Border>

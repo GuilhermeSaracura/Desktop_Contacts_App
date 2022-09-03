@@ -33,6 +33,7 @@ namespace Desktop_Contacts_App
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            SearchTextBox.Text = string.Empty;
             NewContactWindow newContactWindow = new NewContactWindow();
             newContactWindow.ShowDialog();
 

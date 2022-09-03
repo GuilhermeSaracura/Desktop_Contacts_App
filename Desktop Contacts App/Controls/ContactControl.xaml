@@ -5,19 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Desktop_Contacts_App.Controls"
              mc:Ignorable="d"
-             Style="{StaticResource ContactItem}"
+             Style="{StaticResource ContactItemStyle}"
              d:DesignHeight="90" d:DesignWidth="450">
     <Grid>
         <StackPanel Margin="30,10,10,10">
             <TextBlock x:Name="NameTextBlock"
-                       Style="{StaticResource ContactName}"
+                       Style="{StaticResource ContactNameStyle}"
                        Text="Name Lastname"/>
             <TextBlock x:Name="EmailTextBlock"
                        Text="email@email.com"
-                       Style="{StaticResource ContactDataEmail}"/>
+                       Style="{StaticResource ContactDataEmailStyle}"/>
             <TextBlock x:Name="PhoneTextBlock"
                        Text="(123) 456 7890"
-                       Style="{StaticResource ContactDataPhone}"/>
+                       Style="{StaticResource ContactDataPhoneStyle}"/>
         </StackPanel>
     </Grid>
 </UserControl>

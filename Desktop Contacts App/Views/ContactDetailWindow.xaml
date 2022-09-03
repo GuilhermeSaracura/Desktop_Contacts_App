@@ -5,35 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Desktop_Contacts_App"
         mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Title="ContactDetailWindow" Height="250" Width="350">
+        Title="ContactDetailWindow" Height="270" Width="350">
     <Grid>
         <StackPanel Margin="10">
-            <TextBlock Text="Name:"/>
+            <TextBlock Text="Name:"
+                       Style="{StaticResource ItemsTextBlockStyle}"/>
             <TextBox x:Name="NameTextBox"
-                     Margin="0,0,0,5"/>
-            <TextBlock Text="Email:"/>
+                     Style="{StaticResource DataTextBlockStyle}"/>
+            <TextBlock Text="Email:"
+                       Style="{StaticResource ItemsTextBlockStyle}"/>
             <TextBox x:Name="EmailTextBox"
-                     Margin="0,0,0,5"/>
-            <TextBlock Text="Phone:"/>
+                     Style="{StaticResource DataTextBlockStyle}"/>
+            <TextBlock Text="Phone:"
+                       Style="{StaticResource ItemsTextBlockStyle}"/>
             <TextBox x:Name="PhoneTextBox"
-                     Margin="0,0,0,5"/>
-            <Button x:Name="UpdateButton"
+                     Style="{StaticResource DataTextBlockStyle}"/>
+            <Border
+            Width="150"
+            Height="20"
+            Margin="0,25,0,5"
+            Background="Transparent">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="5" RadiusY="5" Rect="0,0,150,20"/>
+                </Border.Clip>
+                <Button x:Name="UpdateButton"
                     Style="{StaticResource ButtonUpdateSaveContactStyle}"
                     Content="Update"
-                    Margin="0,5,0,5"
                     Click="UpdateButton_Click"/>
-            <Button x:Name="DeleteButton"
+            </Border>
+            <Border
+            Width="150"
+                
+            Height="20"
+            Margin="0,5,0,5"
+            Background="Transparent">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="5" RadiusY="5" Rect="0,0,150,20"/>
+                </Border.Clip>
+                <Button x:Name="DeleteButton"
                     Style="{StaticResource DeleteButtonContactStyle}"
                     Content="Delete"
-                    Margin="0,5,0,5"
                     Click="DeleteButton_Click"/>
+            </Border>
+            <Border
+            Width="150"
+            Height="20"
+            Margin="0,5,0,5"
+            Background="Transparent">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="5" RadiusY="5" Rect="0,0,150,20"/>
+                </Border.Clip>
             <Button x:Name="CancelButton"
                     Style="{StaticResource CancelButtonCancelStyle}"
                     Content="Cancel"
-                    Margin="0,5,0,5"
                     Click="CancelButton_Click"/>
+            </Border>
         </StackPanel>
     </Grid>
 </Window>

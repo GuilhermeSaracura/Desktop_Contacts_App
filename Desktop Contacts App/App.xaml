@@ -5,7 +5,8 @@
              xmlns:uc="clr-namespace:Desktop_Contacts_App.Controls"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="BackGroundWindowColor" Color="#1C023D"/>
+        <SolidColorBrush x:Key="BackGroundWindowColor" Color="#1C021D"/>
+        <SolidColorBrush x:Key="ForegroundColor" Color="#010A5C"/>
         <SolidColorBrush x:Key="ItemContactBackgroundColor" Color="#2C6899"/>
         <SolidColorBrush x:Key="NewContactButtonColor" Color="#09B053"/>
         <SolidColorBrush x:Key="ContactNameColor" Color="#39EDE7"/>
@@ -16,32 +17,33 @@
 
         <Style TargetType="Window" x:Key="WindowStyle">
             <Setter Property="Background" Value="{StaticResource BackGroundWindowColor}"/>
+            <Setter Property="BorderBrush" Value="WhiteSmoke"/>
+            <Setter Property="BorderThickness" Value="2"/>
         </Style>
 
         <Style TargetType="Button" x:Key="ButtonNewContactStyle">
             <Setter Property="Background" Value="{StaticResource NewContactButtonColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{StaticResource NewContactButtonColor}"/>
-                </Trigger>
-            </Style.Triggers>
         </Style>
 
         <Style TargetType="Button" x:Key="ButtonUpdateSaveContactStyle">
             <Setter Property="Background" Value="{StaticResource SaveUpdateButtonColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Foreground" Value="{StaticResource ForegroundWhite}"/>
             <Setter Property="Cursor" Value="Hand"/>
         </Style>
 
         <Style TargetType="Button" x:Key="DeleteButtonContactStyle">
             <Setter Property="Background" Value="{StaticResource DeleteButtonColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Foreground" Value="{StaticResource ForegroundWhite}"/>
             <Setter Property="Cursor" Value="Hand"/>
         </Style>
 
         <Style TargetType="Button" x:Key="CancelButtonCancelStyle">
             <Setter Property="Background" Value="{StaticResource CancelButtonColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Foreground" Value="{StaticResource ForegroundWhite}"/>
             <Setter Property="Cursor" Value="Hand"/>
         </Style>
@@ -49,27 +51,66 @@
         <Style TargetType="ListView" x:Key="ListContactsStyle">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
+            <Style.Resources>
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Background" Value="{StaticResource ForegroundColor}"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Row="1" CornerRadius="10"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Style.Resources>
         </Style>
 
-        <Style TargetType="UserControl" x:Key="ContactItem">
+        <Style TargetType="UserControl" x:Key="ContactItemStyle">
             <Setter Property="Background" Value="{StaticResource ItemContactBackgroundColor}"/>
         </Style>
 
-        <Style TargetType="TextBlock" x:Key="ContactName">
+        <Style TargetType="TextBlock" x:Key="ContactNameStyle">
             <Setter Property="Foreground" Value="{StaticResource ContactNameColor}"/>
             <Setter Property="FontSize" Value="20px"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
-        <Style TargetType="TextBlock" x:Key="ContactDataEmail">
+        <Style TargetType="TextBlock" x:Key="ContactDataEmailStyle">
             <Setter Property="Foreground" Value="{StaticResource ForegroundWhite}"/>
             <Setter Property="FontSize" Value="15px"/>
         </Style>
 
-        <Style TargetType="TextBlock" x:Key="ContactDataPhone">
+        <Style TargetType="TextBlock" x:Key="ContactDataPhoneStyle">
             <Setter Property="Foreground" Value="{StaticResource ForegroundWhite}"/>
             <Setter Property="FontSize" Value="15px"/>
             <Setter Property="FontStyle" Value="Italic"/>
         </Style>
+
+        <Style TargetType="TextBox" x:Key="DataTextBlockStyle">
+            <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+            <Setter Property="FontSize" Value="15px"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="SearchTextBlockStyle">
+            <Setter Property="Foreground" Value="{StaticResource ForegroundColor}"/>
+            <Setter Property="Height" Value="25px"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="FontSize" Value="16px"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="ItemsTextBlockStyle">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16px"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+
     </Application.Resources>
 </Application>
