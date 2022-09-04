@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Style="{StaticResource WindowStyle}"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="450" Width="525">
-    <StackPanel Margin="10">
+        Title="MainWindow" Height="480" Width="525">
+    <StackPanel Margin="10,10,10,5">
         <Border
             Width="150"
             Height="20"
@@ -47,7 +47,7 @@
         <ListView x:Name="ContactsViewList"
                   Style="{StaticResource ListContactsStyle}"
                   SelectionChanged="ContactsViewList_SelectionChanged"
-                  Height="345"
+                  Height="380"
                   Margin="5,0,5,0">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
